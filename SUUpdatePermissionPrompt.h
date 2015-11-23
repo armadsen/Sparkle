@@ -34,6 +34,7 @@ typedef enum {
 
 @interface NSObject (SUUpdatePermissionPromptDelegateInformalProtocol)
 - (void)updatePermissionPromptFinishedWithResult:(SUPermissionPromptResult)result;
+- (BOOL)shouldAskForPermissionToSendSystemProfile;
 @end
 
 #endif

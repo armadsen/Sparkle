@@ -108,6 +108,9 @@ extern NSString *const SUUpdaterAppcastNotificationKey;
 // Use this to override the default behavior for Sparkle prompting the user about automatic update checks.
 - (BOOL)updaterShouldPromptForPermissionToCheckForUpdates:(SUUpdater *)bundle;
 
+// Use this to override the default behavior for Sparkle prompting the user about sending system profile
+- (BOOL)updaterShouldPromptForPermissionToSendSystemProfile:(SUUpdater *)updater;
+
 // Implement this if you want to do some special handling with the appcast once it finishes loading.
 - (void)updater:(SUUpdater *)updater didFinishLoadingAppcast:(SUAppcast *)appcast;
 

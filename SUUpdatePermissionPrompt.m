@@ -15,7 +15,14 @@
 
 - (BOOL)shouldAskAboutProfile
 {
-	return [[host objectForInfoDictionaryKey:SUEnableSystemProfilingKey] boolValue];
+	NSNumber *infoDictValue = [host objectForInfoDictionaryKey:SUEnableSystemProfilingKey];
+	BOOL result = [infoDictValue boolValue];
+	if (!infoDictValue) {
+		if ([delegate respondsToSelector:@selector(shouldAskForPermissionToSendSystemProfile)]) {
+			result = [delegate shouldAskForPermissionToSendSystemProfile];
+		}
+	}
+	return result;
 }
 
 - (id)initWithHost:(SUHost *)aHost systemProfile:(NSArray *)profile delegate:(id)d
@@ -54,9 +61,9 @@
 		frame.size.height -= [moreInfoButton frame].size.height;
 		[[self window] setFrame:frame display:YES];
 	} else {
-        // Set the table view's delegate so we can disable row selection.
-        [profileTableView setDelegate:(id)self];
-    }
+		// Set the table view's delegate so we can disable row selection.
+		[profileTableView setDelegate:(id)self];
+	}
 }
 
 - (BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row { return NO; }

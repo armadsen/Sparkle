@@ -192,6 +192,14 @@ static NSString * const SUUpdaterDefaultsObservationContext = @"SUUpdaterDefault
 	[self resetUpdateCycle];
 }
 
+- (BOOL)shouldAskForPermissionToSendSystemProfile
+{
+	if ([delegate respondsToSelector:@selector(updaterShouldPromptForPermissionToSendSystemProfile:)]) {
+		return [delegate updaterShouldPromptForPermissionToSendSystemProfile:self];
+	}
+	return NO;
+}
+
 - (void)updateDriverDidFinish:(NSNotification *)note
 {
 	if ([note object] == driver && [driver finished])
