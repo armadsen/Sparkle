@@ -24,4 +24,6 @@
 
 #import <Sparkle/SUConstants.h>
 
+#import <Sparkle/SULog.h>
+
 #endif

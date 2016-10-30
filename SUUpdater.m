@@ -340,7 +340,6 @@ static NSString * const SUUpdaterDefaultsObservationContext = @"SUUpdaterDefault
 	if ([self updateInProgress]) { return; }
 	if (checkTimer) { [checkTimer invalidate]; self.checkTimer = nil; }		// UK 2009-03-16 Timer is non-repeating, may have invalidated itself, so we had to retain it.
 	
-	SUClearLog();
 	SULog( @"===== %@ =====", [[NSFileManager defaultManager] displayNameAtPath: [[NSBundle mainBundle] bundlePath]] );
 	
 	[self willChangeValueForKey:@"lastUpdateCheckDate"];
