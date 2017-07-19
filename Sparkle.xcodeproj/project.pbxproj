@@ -839,7 +839,6 @@
 				8B887B631517F3AC000BB292 /* Interface */,
 			);
 			name = "Sandbox Service";
-			path = Update;
 			sourceTree = "<group>";
 		};
 		8B887B631517F3AC000BB292 /* Interface */ = {
