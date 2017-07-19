@@ -3,3 +3,4 @@
 PRODUCT_NAME = com.andymatuschak.Sparkle.SandboxService
 WRAPPER_EXTENSION = xpc
 MACH_O_TYPE = mh_execute
+
