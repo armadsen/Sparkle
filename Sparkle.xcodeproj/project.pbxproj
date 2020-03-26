@@ -485,6 +485,8 @@
 		9D6BC33118D38110006FF98D /* ConfigService.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ConfigService.xcconfig; sourceTree = "<group>"; };
 		9D6BC33218D38110006FF98D /* ConfigServiceDebug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ConfigServiceDebug.xcconfig; sourceTree = "<group>"; };
 		9D6BC33318D38110006FF98D /* ConfigServiceRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ConfigServiceRelease.xcconfig; sourceTree = "<group>"; };
+		9D97C8E1242C850A00923277 /* Autoupdate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Autoupdate.entitlements; sourceTree = "<group>"; };
+		9D97C8E2242C851C00923277 /* com.andymatuschak.Sparkle.SandboxService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = com.andymatuschak.Sparkle.SandboxService.entitlements; sourceTree = "<group>"; };
 		FA1941CA0D94A70100DD942E /* ConfigFrameworkDebug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ConfigFrameworkDebug.xcconfig; sourceTree = "<group>"; };
 		FA1941CB0D94A70100DD942E /* ConfigTestAppDebug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ConfigTestAppDebug.xcconfig; sourceTree = "<group>"; };
 		FA1941CC0D94A70100DD942E /* ConfigCommonRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ConfigCommonRelease.xcconfig; sourceTree = "<group>"; };
@@ -590,6 +592,8 @@
 		0867D691FE84028FC02AAC07 /* Sparkle */ = {
 			isa = PBXGroup;
 			children = (
+				9D97C8E2242C851C00923277 /* com.andymatuschak.Sparkle.SandboxService.entitlements */,
+				9D97C8E1242C850A00923277 /* Autoupdate.entitlements */,
 				22760C70183F7D520047AABB /* Sparkle Test App.entitlements */,
 				61F83F6E0DBFE07A006FDD30 /* Update Control */,
 				61299B3909CB055000B7442F /* Appcast Support */,
@@ -1076,12 +1080,18 @@
 			attributes = {
 				LastUpgradeCheck = 0930;
 				TargetAttributes = {
+					55C14BB6136EEF1500649790 = {
+						DevelopmentTeam = 2CX7W99FJ9;
+					};
 					61B5F90109C4CEE200B25A18 = {
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
 							};
 						};
+					};
+					8B887B5D1517F3AB000BB292 = {
+						DevelopmentTeam = 2CX7W99FJ9;
 					};
 				};
 			};
@@ -1730,8 +1740,12 @@
 			baseConfigurationReference = FA1941D30D94A70100DD942E /* ConfigRelaunchDebug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = Autoupdate.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 2CX7W99FJ9;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = finish_installation.pch;
@@ -1752,9 +1766,13 @@
 			baseConfigurationReference = FA1941D40D94A70100DD942E /* ConfigRelaunchRelease.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = Autoupdate.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 2CX7W99FJ9;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = finish_installation.pch;
 				INFOPLIST_FILE = "finish_installation-Info.plist";
@@ -1831,7 +1849,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9D6BC33218D38110006FF98D /* ConfigServiceDebug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = com.andymatuschak.Sparkle.SandboxService.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2CX7W99FJ9;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				INFOPLIST_FILE = SandboxService.plist;
 				OTHER_CFLAGS = "-DDEBUG";
@@ -1843,7 +1865,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9D6BC33318D38110006FF98D /* ConfigServiceRelease.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = com.andymatuschak.Sparkle.SandboxService.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2CX7W99FJ9;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				INFOPLIST_FILE = SandboxService.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "${EXECUTABLE_NAME}";
