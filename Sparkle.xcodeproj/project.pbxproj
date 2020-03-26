@@ -1082,6 +1082,7 @@
 				TargetAttributes = {
 					55C14BB6136EEF1500649790 = {
 						DevelopmentTeam = 2CX7W99FJ9;
+						ProvisioningStyle = Manual;
 					};
 					61B5F90109C4CEE200B25A18 = {
 						SystemCapabilities = {
@@ -1092,6 +1093,7 @@
 					};
 					8B887B5D1517F3AB000BB292 = {
 						DevelopmentTeam = 2CX7W99FJ9;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -1742,6 +1744,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = Autoupdate.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 2CX7W99FJ9;
@@ -1757,6 +1760,7 @@
 					AppKit,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.andymatuschak.sparkle.${PRODUCT_NAME:rfc1034identifier}";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -1768,6 +1772,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = Autoupdate.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1783,6 +1788,7 @@
 					AppKit,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.andymatuschak.sparkle.${PRODUCT_NAME:rfc1034identifier}";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -1851,6 +1857,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = com.andymatuschak.Sparkle.SandboxService.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2CX7W99FJ9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1858,6 +1865,7 @@
 				INFOPLIST_FILE = SandboxService.plist;
 				OTHER_CFLAGS = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "${EXECUTABLE_NAME}";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -1867,12 +1875,14 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = com.andymatuschak.Sparkle.SandboxService.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2CX7W99FJ9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				INFOPLIST_FILE = SandboxService.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "${EXECUTABLE_NAME}";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
